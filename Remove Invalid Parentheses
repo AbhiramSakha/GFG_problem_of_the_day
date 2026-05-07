@@ -1,0 +1,49 @@
+class Solution:
+    def validParenthesis(self, s):
+        
+        def is_valid(string):
+            count = 0
+            for ch in string:
+                if ch == '(':
+                    count += 1
+                elif ch == ')':
+                    count -= 1
+                    if count < 0:
+                        return False
+            return count == 0
+        
+        def min_removals_needed(string):
+            open_count = close_count = 0
+            for c in string:
+                if c == '(':
+                    open_count += 1
+                elif c == ')':
+                    if open_count > 0:
+                        open_count -= 1
+                    else:
+                        close_count += 1
+            return open_count + close_count
+        
+        min_rem = min_removals_needed(s)
+        result = []
+        visited = set()
+        
+        def dfs(curr, index, removals_left):
+            if removals_left == 0:
+                if is_valid(curr) and curr not in visited:
+                    visited.add(curr)
+                    result.append(curr)
+                return
+            
+            for i in range(index, len(curr)):
+                # Only remove parentheses
+                if curr[i] != '(' and curr[i] != ')':
+                    continue
+                # Skip duplicate adjacent same characters to avoid duplicates
+                if i > index and curr[i] == curr[i-1]:
+                    continue
+                candidate = curr[:i] + curr[i+1:]
+                dfs(candidate, i, removals_left - 1)
+        
+        dfs(s, 0, min_rem)
+        return result if result else [""]
