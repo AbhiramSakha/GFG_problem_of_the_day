@@ -1,0 +1,71 @@
+from math import gcd
+
+class SegmentTree:
+    def __init__(self, arr):
+        self.n = len(arr)
+        self.tree = [1] * (4 * self.n)
+        self.build(arr, 0, 0, self.n - 1)
+
+    def lcm(self, a, b):
+        return (a * b) // gcd(a, b)
+
+    def build(self, arr, node, start, end):
+        if start == end:
+            self.tree[node] = arr[start]
+            return
+
+        mid = (start + end) // 2
+        self.build(arr, 2 * node + 1, start, mid)
+        self.build(arr, 2 * node + 2, mid + 1, end)
+
+        self.tree[node] = self.lcm(
+            self.tree[2 * node + 1],
+            self.tree[2 * node + 2]
+        )
+
+    def update(self, node, start, end, idx, val):
+        if start == end:
+            self.tree[node] = val
+            return
+
+        mid = (start + end) // 2
+
+        if idx <= mid:
+            self.update(2 * node + 1, start, mid, idx, val)
+        else:
+            self.update(2 * node + 2, mid + 1, end, idx, val)
+
+        self.tree[node] = self.lcm(
+            self.tree[2 * node + 1],
+            self.tree[2 * node + 2]
+        )
+
+    def query(self, node, start, end, l, r):
+        if r < start or end < l:
+            return 1
+
+        if l <= start and end <= r:
+            return self.tree[node]
+
+        mid = (start + end) // 2
+
+        left = self.query(2 * node + 1, start, mid, l, r)
+        right = self.query(2 * node + 2, mid + 1, end, l, r)
+
+        return self.lcm(left, right)
+
+
+class Solution:
+    def RangeLCMQuery(self, arr, queries):
+        seg = SegmentTree(arr)
+        ans = []
+
+        for q in queries:
+            if q[0] == 1:
+                _, idx, val = q
+                seg.update(0, 0, seg.n - 1, idx, val)
+            else:
+                _, l, r = q
+                ans.append(seg.query(0, 0, seg.n - 1, l, r))
+
+        return ans
