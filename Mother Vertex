@@ -1,0 +1,37 @@
+class Solution:
+    def findMotherVertex(self, V, edges):
+        adj = [[] for _ in range(V)]
+        
+        for u, v in edges:
+            adj[u].append(v)
+        
+        def dfs(node, visited):
+            visited[node] = True
+            for nei in adj[node]:
+                if not visited[nei]:
+                    dfs(nei, visited)
+        
+        candidate = -1
+        visited = [False] * V
+        
+        for i in range(V):
+            if not visited[i]:
+                dfs(i, visited)
+                candidate = i
+        
+        if candidate == -1:
+            return -1
+        
+        visited = [False] * V
+        dfs(candidate, visited)
+        
+        if not all(visited):
+            return -1
+        
+        for i in range(candidate + 1):
+            visited = [False] * V
+            dfs(i, visited)
+            if all(visited):
+                return i
+        
+        return candidate
