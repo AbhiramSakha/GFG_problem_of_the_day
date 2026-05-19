@@ -1,0 +1,29 @@
+from collections import deque
+
+class Solution:
+    def minSteps(self, arr, start, end):
+        if start == end:
+            return 0
+
+        MOD = 1000
+        dist = [-1] * MOD
+        q = deque()
+
+        q.append(start)
+        dist[start] = 0
+
+        while q:
+            node = q.popleft()
+
+            for x in arr:
+                nxt = (node * x) % MOD
+
+                if dist[nxt] == -1:
+                    dist[nxt] = dist[node] + 1
+
+                    if nxt == end:
+                        return dist[nxt]
+
+                    q.append(nxt)
+
+        return -1
