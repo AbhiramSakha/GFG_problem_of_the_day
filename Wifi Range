@@ -1,0 +1,16 @@
+class Solution:
+    def wifiRange(self, s, x):
+        n = len(s)
+        coverage = 0
+
+        for i in range(n):
+            if s[i] == '1':
+                left = max(0, i - x)
+                right = min(n - 1, i + x)
+
+                if left > coverage:
+                    return False
+
+                coverage = max(coverage, right + 1)
+
+        return coverage >= n
