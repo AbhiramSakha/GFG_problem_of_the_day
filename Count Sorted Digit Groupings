@@ -1,0 +1,23 @@
+class Solution:
+    def validGroups(self, s):
+        n = len(s)
+
+        from functools import lru_cache
+
+        @lru_cache(None)
+        def solve(idx, prev_sum):
+            if idx == n:
+                return 1
+
+            ans = 0
+            curr_sum = 0
+
+            for j in range(idx, n):
+                curr_sum += int(s[j])
+
+                if curr_sum >= prev_sum:
+                    ans += solve(j + 1, curr_sum)
+
+            return ans
+
+        return solve(0, 0)
