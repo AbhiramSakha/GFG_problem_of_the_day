@@ -1,0 +1,31 @@
+class Solution:
+    def findMaxProduct(self, arr):
+        MOD = 1000000007
+        n = len(arr)
+
+        if n == 1:
+            return arr[0]
+
+        product = 1
+        neg_count = 0
+        zero_count = 0
+        max_negative = -11
+
+        for x in arr:
+            if x == 0:
+                zero_count += 1
+            else:
+                product *= x
+                if x < 0:
+                    neg_count += 1
+                    max_negative = max(max_negative, x)
+
+        if zero_count == n:
+            return 0
+
+        if neg_count % 2 == 1:
+            if neg_count == 1 and zero_count + neg_count == n:
+                return 0
+            product //= max_negative
+
+        return product % MOD
