@@ -1,3 +1,4 @@
+
 class Solution:
     def binarySearchable(self, arr):
         n = len(arr)
