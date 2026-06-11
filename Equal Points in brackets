@@ -1,0 +1,15 @@
+class Solution:
+    def findIndex(self, s):
+        close = s.count(')')
+        open_cnt = 0
+
+        for i, ch in enumerate(s):
+            if open_cnt == close:
+                return i
+
+            if ch == '(':
+                open_cnt += 1
+            else:
+                close -= 1
+
+        return len(s)
