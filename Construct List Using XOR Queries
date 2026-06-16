@@ -1,0 +1,15 @@
+class Solution:
+    def constructList(self, queries):
+        xr = 0
+        arr = []
+
+        for t, x in reversed(queries):
+            if t == 1:
+                xr ^= x
+            else:
+                arr.append(x ^ xr)
+
+        arr.append(xr)  
+        arr.sort()
+
+        return arr
