@@ -1,0 +1,28 @@
+class Solution:
+    def chooseSwap(self, s):
+        n = len(s)
+
+        present = [False] * 26
+        for ch in s:
+            present[ord(ch) - ord('a')] = True
+
+        for i in range(n):
+            present[ord(s[i]) - ord('a')] = False
+
+            for c in range(ord(s[i]) - ord('a')):
+                if present[c]:
+                    ch1 = s[i]
+                    ch2 = chr(c + ord('a'))
+
+                    res = []
+                    for ch in s:
+                        if ch == ch1:
+                            res.append(ch2)
+                        elif ch == ch2:
+                            res.append(ch1)
+                        else:
+                            res.append(ch)
+
+                    return ''.join(res)
+
+        return s
