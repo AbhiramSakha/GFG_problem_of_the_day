@@ -1,0 +1,23 @@
+class Solution:
+    def divisibleByK(self, arr, k):
+        n = len(arr)
+        
+        if n > k:
+            return True
+        
+        dp = [False] * k
+        
+        for num in arr:
+            if dp[0]:
+                return True
+            
+            temp = dp[:]
+            temp[num % k] = True
+            
+            for r in range(k):
+                if dp[r]:
+                    temp[(r + num) % k] = True
+            
+            dp = temp
+        
+        return dp[0]
