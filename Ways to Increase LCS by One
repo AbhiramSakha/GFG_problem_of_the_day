@@ -1,0 +1,33 @@
+class Solution:
+    def waysToIncreaseLCSBy1(self, s1, s2):
+        n = len(s1)
+        m = len(s2)
+
+        pref = [[0] * (m + 1) for _ in range(n + 1)]
+        for i in range(n):
+            for j in range(m):
+                if s1[i] == s2[j]:
+                    pref[i + 1][j + 1] = pref[i][j] + 1
+                else:
+                    pref[i + 1][j + 1] = max(pref[i][j + 1], pref[i + 1][j])
+
+        suff = [[0] * (m + 1) for _ in range(n + 1)]
+        for i in range(n - 1, -1, -1):
+            for j in range(m - 1, -1, -1):
+                if s1[i] == s2[j]:
+                    suff[i][j] = suff[i + 1][j + 1] + 1
+                else:
+                    suff[i][j] = max(suff[i + 1][j], suff[i][j + 1])
+
+        lcs = pref[n][m]
+        ans = 0
+
+        for pos in range(n + 1):
+            used = [False] * 26
+            for j in range(m):
+                if not used[ord(s2[j]) - ord('a')]:
+                    if pref[pos][j] + 1 + suff[pos][j + 1] == lcs + 1:
+                        used[ord(s2[j]) - ord('a')] = True
+                        ans += 1
+
+        return ans
