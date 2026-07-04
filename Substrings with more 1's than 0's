@@ -1,0 +1,37 @@
+class Solution:
+    def countSubstring(self, s):
+        n = len(s)
+        
+        prefix = 0
+        vals = [0]
+        for ch in s:
+            if ch == '1':
+                prefix += 1
+            else:
+                prefix -= 1
+            vals.append(prefix)
+        
+        comp = sorted(set(vals))
+        rank = {v: i + 1 for i, v in enumerate(comp)}
+        
+        bit = [0] * (len(comp) + 2)
+        
+        def update(i):
+            while i < len(bit):
+                bit[i] += 1
+                i += i & -i
+        
+        def query(i):
+            s = 0
+            while i > 0:
+                s += bit[i]
+                i -= i & -i
+            return s
+        
+        ans = 0
+        for v in vals:
+            idx = rank[v]
+            ans += query(idx - 1)
+            update(idx)
+        
+        return ans
