@@ -1,0 +1,28 @@
+class Solution:
+    def minOperations(self, b):
+        MOD = 10**9 + 7
+
+        n = len(b)
+        visited = [False] * n
+
+        def gcd(a, c):
+            while c:
+                a, c = c, a % c
+            return a
+
+        def lcm(a, c):
+            return (a // gcd(a, c)) * c
+
+        ans = 1
+
+        for i in range(n):
+            if not visited[i]:
+                length = 0
+                j = i
+                while not visited[j]:
+                    visited[j] = True
+                    j = b[j] - 1
+                    length += 1
+                ans = lcm(ans, length)
+
+        return ans % MOD
