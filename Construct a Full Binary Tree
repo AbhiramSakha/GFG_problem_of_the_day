@@ -1,0 +1,26 @@
+class Solution:
+    def constructBinaryTree(self, pre, preMirror):
+        pos = {v: i for i, v in enumerate(preMirror)}
+        n = len(pre)
+        pre_idx = 0
+
+        def build(l, r):
+            nonlocal pre_idx
+            if pre_idx >= n or l > r:
+                return None
+
+            root = Node(pre[pre_idx])
+            pre_idx += 1
+
+            if l == r or pre_idx >= n:
+                return root
+
+            nxt = pre[pre_idx]
+            mid = pos[nxt]
+
+            root.left = build(mid, r)
+            root.right = build(l + 1, mid - 1)
+
+            return root
+
+        return build(0, n - 1)
