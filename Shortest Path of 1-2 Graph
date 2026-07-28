@@ -1,0 +1,33 @@
+from collections import deque
+
+class Solution:
+    def shortestPath(self, V: int, src: int, dest: int, edges: list[list[int]]) -> int:
+        # Transform weight-2 edges by inserting a dummy node.
+        adj = [[] for _ in range(V + len(edges))]
+        nxt = V
+
+        for u, v, w in edges:
+            if w == 1:
+                adj[u].append(v)
+                adj[v].append(u)
+            else:
+                adj[u].append(nxt)
+                adj[nxt].append(u)
+                adj[nxt].append(v)
+                adj[v].append(nxt)
+                nxt += 1
+
+        dist = [-1] * nxt
+        q = deque([src])
+        dist[src] = 0
+
+        while q:
+            u = q.popleft()
+            if u == dest:
+                return dist[u]
+            for v in adj[u]:
+                if dist[v] == -1:
+                    dist[v] = dist[u] + 1
+                    q.append(v)
+
+        return -1
