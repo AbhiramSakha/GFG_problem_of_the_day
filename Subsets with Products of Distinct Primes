@@ -1,0 +1,45 @@
+class Solution:
+    def countSubsets(self, arr):
+        MOD = 10**9 + 7
+
+        primes = [2,3,5,7,11,13,17,19,23,29]
+
+        # mask for every valid number (square-free only)
+        masks = [-1] * 31
+        for x in range(2, 31):
+            t = x
+            mask = 0
+            ok = True
+            for i, p in enumerate(primes):
+                c = 0
+                while t % p == 0:
+                    t //= p
+                    c += 1
+                if c > 1:
+                    ok = False
+                    break
+                if c:
+                    mask |= 1 << i
+            if ok:
+                masks[x] = mask
+
+        freq = [0] * 31
+        for x in arr:
+            freq[x] += 1
+
+        dp = [0] * 1024
+        dp[0] = 1
+
+        for v in range(2, 31):
+            if freq[v] == 0 or masks[v] == -1:
+                continue
+            m = masks[v]
+            ndp = dp[:]
+            for s in range(1024):
+                if dp[s] and (s & m) == 0:
+                    ndp[s | m] = (ndp[s | m] + dp[s] * freq[v]) % MOD
+            dp = ndp
+
+        ans = sum(dp[1:]) % MOD
+        ans = ans * pow(2, freq[1], MOD) % MOD
+        return ans
