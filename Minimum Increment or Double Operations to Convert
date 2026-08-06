@@ -1,0 +1,16 @@
+class Solution:
+    def countMinOperations(self, arr):
+        inc = 0
+        doubles = 0
+
+        for x in arr:
+            bits = 0
+            while x:
+                if x & 1:
+                    inc += 1
+                x >>= 1
+                bits += 1
+            if bits:
+                doubles = max(doubles, bits - 1)
+
+        return inc + doubles
