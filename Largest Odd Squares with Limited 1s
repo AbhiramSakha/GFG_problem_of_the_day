@@ -1,0 +1,63 @@
+class Solution:
+    def largestSquare(self, mat: list[list[int]], queries: list[list[int]], k: int) -> list[int]:
+        n = len(mat)
+        m = len(mat[0])
+
+        # 2D prefix sum
+        pref = [[0] * (m + 1) for _ in range(n + 1)]
+
+        for i in range(n):
+            for j in range(m):
+                pref[i + 1][j + 1] = (
+                    mat[i][j]
+                    + pref[i][j + 1]
+                    + pref[i + 1][j]
+                    - pref[i][j]
+                )
+
+        def get_ones(r1, c1, r2, c2):
+            return (
+                pref[r2 + 1][c2 + 1]
+                - pref[r1][c2 + 1]
+                - pref[r2 + 1][c1]
+                + pref[r1][c1]
+            )
+
+        ans = []
+
+        for i, j in queries:
+            # Check the 1 x 1 square first
+            if mat[i][j] > k:
+                ans.append(-1)
+                continue
+
+            # Maximum possible radius
+            max_radius = min(
+                i,
+                j,
+                n - 1 - i,
+                m - 1 - j
+            )
+
+            low, high = 0, max_radius
+            best = 0
+
+            while low <= high:
+                radius = (low + high) // 2
+
+                r1 = i - radius
+                c1 = j - radius
+                r2 = i + radius
+                c2 = j + radius
+
+                count = get_ones(r1, c1, r2, c2)
+
+                if count <= k:
+                    best = radius
+                    low = radius + 1
+                else:
+                    high = radius - 1
+
+            ans.append(2 * best + 1)
+
+        return ans
