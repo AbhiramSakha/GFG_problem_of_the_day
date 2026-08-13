@@ -1,0 +1,49 @@
+class Solution:
+
+    def maxDistance(self, V, src, edges):
+        from collections import deque
+
+        graph = [[] for _ in range(V)]
+        indegree = [0] * V
+
+        for u, v, w in edges:
+            graph[u].append((v, w))
+            indegree[v] += 1
+
+        # Topological sort
+        q = deque()
+
+        for i in range(V):
+            if indegree[i] == 0:
+                q.append(i)
+
+        topo = []
+
+        while q:
+            u = q.popleft()
+            topo.append(u)
+
+            for v, w in graph[u]:
+                indegree[v] -= 1
+                if indegree[v] == 0:
+                    q.append(v)
+
+        # Longest distances
+        INF = -(10**18)
+        dist = [INF] * V
+        dist[src] = 0
+
+        for u in topo:
+            if dist[u] == INF:
+                continue
+
+            for v, w in graph[u]:
+                dist[v] = max(dist[v], dist[u] + w)
+
+        # Convert unreachable vertices to INT_MIN
+        INT_MIN = -(2**31)
+        for i in range(V):
+            if dist[i] == INF:
+                dist[i] = INT_MIN
+
+        return dist
