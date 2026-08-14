@@ -1,0 +1,24 @@
+class Solution:
+    def isPossible(self, arr, s, x):
+        seq = [s]
+        total = s
+
+        for num in arr:
+            val = total + num
+            seq.append(val)
+            total += val
+
+            if val > x:
+                break
+
+        # Greedy subset sum because the sequence is superincreasing
+        remaining = x
+
+        for num in reversed(seq):
+            if num <= remaining:
+                remaining -= num
+
+            if remaining == 0:
+                return True
+
+        return False
