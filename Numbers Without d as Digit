@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    long long countWithout(int n, int d) {
+        if (n == 0) return 0;
+
+        string s = to_string(n);
+        int len = s.size();
+
+        // dp[pos][tight][started]
+        long long dp[12][2][2] = {};
+
+        dp[0][1][0] = 1;
+
+        for (int pos = 0; pos < len; pos++) {
+            for (int tight = 0; tight <= 1; tight++) {
+                for (int started = 0; started <= 1; started++) {
+
+                    long long cur = dp[pos][tight][started];
+                    if (cur == 0) continue;
+
+                    int limit = tight ? (s[pos] - '0') : 9;
+
+                    for (int digit = 0; digit <= limit; digit++) {
+
+                        int newTight = tight && (digit == limit);
+
+                        // Leading zero: number has not started yet
+                        if (!started && digit == 0) {
+                            dp[pos + 1][newTight][0] += cur;
+                        }
+                        else {
+                            // Don't allow digit d
+                            if (digit == d)
+                                continue;
+
+                            dp[pos + 1][newTight][1] += cur;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Subtract 1 because 0 is included,
+        // but the question asks for numbers from 1 to n.
+        long long ans = 0;
+
+        for (int tight = 0; tight <= 1; tight++) {
+            ans += dp[len][tight][1];
+        }
+
+        return ans;
+    }
+};
