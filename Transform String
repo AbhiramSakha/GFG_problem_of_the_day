@@ -1,0 +1,38 @@
+class Solution {
+  public:
+    int transform(string &s1, string &s2) {
+        if (s1.length() != s2.length())
+            return -1;
+
+        // Check if both strings contain the same characters
+        map<char, int> freq;
+
+        for (char c : s1)
+            freq[c]++;
+
+        for (char c : s2) {
+            freq[c]--;
+            if (freq[c] < 0)
+                return -1;
+        }
+
+        for (auto &p : freq) {
+            if (p.second != 0)
+                return -1;
+        }
+
+        int i = s1.length() - 1;
+        int j = s2.length() - 1;
+
+        // Keep the longest suffix of s1 that already
+        // appears in the correct relative order in s2.
+        while (i >= 0) {
+            if (s1[i] == s2[j]) {
+                j--;
+            }
+            i--;
+        }
+
+        return j + 1;
+    }
+};
