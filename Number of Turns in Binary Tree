@@ -1,0 +1,68 @@
+class Solution {
+  public:
+    bool findPath(Node* root, int target, vector<int>& path) {
+        if (root == nullptr)
+            return false;
+
+        if (root->data == target)
+            return true;
+
+        // 0 = left, 1 = right
+        path.push_back(0);
+        if (findPath(root->left, target, path))
+            return true;
+        path.pop_back();
+
+        path.push_back(1);
+        if (findPath(root->right, target, path))
+            return true;
+        path.pop_back();
+
+        return false;
+    }
+
+    int numberOfTurns(Node* root, int p, int q) {
+        vector<int> pathP, pathQ;
+
+        if (!findPath(root, p, pathP) ||
+            !findPath(root, q, pathQ)) {
+            return -1;
+        }
+
+        int i = 0;
+
+        // Find first different direction.
+        // i is the position of the LCA-to-child direction.
+        while (i < pathP.size() &&
+               i < pathQ.size() &&
+               pathP[i] == pathQ[i]) {
+            i++;
+        }
+
+        int turns = 0;
+
+        // Count turns on p's side.
+        for (int j = (int)pathP.size() - 1; j > i; j--) {
+            if (pathP[j] != pathP[j - 1])
+                turns++;
+        }
+
+        // Count the turn at LCA.
+        if (i < pathP.size() && i < pathQ.size()) {
+            if (pathP[i] != pathQ[i])
+                turns++;
+        }
+
+        // Count turns on q's side.
+        for (int j = i + 1; j < pathQ.size(); j++) {
+            if (pathQ[j] != pathQ[j - 1])
+                turns++;
+        }
+
+        // If there are no direction changes at all.
+        if (turns == 0)
+            return -1;
+
+        return turns;
+    }
+};
