@@ -1,0 +1,30 @@
+class Solution {
+  public:
+    int minMoves(vector<int>& arr) {
+        int n = arr.size();
+
+        // pos[x] = position of value x
+        vector<int> pos(n + 1);
+
+        for (int i = 0; i < n; i++) {
+            pos[arr[i]] = i;
+        }
+
+        // Find the longest consecutive sequence
+        // x, x+1, x+2, ... already in correct order.
+        int longest = 1;
+        int current = 1;
+
+        for (int x = 2; x <= n; x++) {
+            if (pos[x] > pos[x - 1]) {
+                current++;
+            } else {
+                current = 1;
+            }
+
+            longest = max(longest, current);
+        }
+
+        return n - longest;
+    }
+};
