@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int minCost(int n, int i, int d, int c) {
+        vector<long long> dp(n + 2, 0);
+
+        dp[0] = 0;
+
+        for (int x = 1; x <= n; x++) {
+            // Insert one character
+            dp[x] = dp[x - 1] + i;
+
+            // Copy-paste exactly
+            if (x % 2 == 0) {
+                dp[x] = min(dp[x], dp[x / 2] + c);
+            }
+
+            // Copy-paste from ceil(x/2), then delete extra characters
+            int half = (x + 1) / 2;
+
+            if (2 * half >= x) {
+                long long cost =
+                    dp[half] + c + (2LL * half - x) * d;
+
+                dp[x] = min(dp[x], cost);
+            }
+        }
+
+        return (int)dp[n];
+    }
+};
