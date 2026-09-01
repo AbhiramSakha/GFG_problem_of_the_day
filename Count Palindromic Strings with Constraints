@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int palindromicStrings(int n, int k) {
+        const long long MOD = 1000000007;
+
+        long long perm = 1;
+        long long ans = 0;
+
+        for (int x = 1; x <= k; x++) {
+            perm = (perm * (k - x + 1)) % MOD;
+
+            // Odd length: 2*x - 1
+            if (2 * x - 1 <= n) {
+                ans = (ans + perm) % MOD;
+            }
+
+            // Even length: 2*x
+            if (2 * x <= n) {
+                ans = (ans + perm) % MOD;
+            }
+
+            if (2 * x > n) {
+                break;
+            }
+        }
+
+        return (int)ans;
+    }
+};
