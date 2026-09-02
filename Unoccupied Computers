@@ -1,0 +1,37 @@
+class Solution {
+  public:
+    int solve(int n, string s) {
+        bool inside[26] = {false};
+        bool usingComputer[26] = {false};
+
+        int available = n;
+        int rejected = 0;
+
+        for (char c : s) {
+            int id = c - 'A';
+
+            if (!inside[id]) {
+                // Arrival
+                inside[id] = true;
+
+                if (available > 0) {
+                    usingComputer[id] = true;
+                    available--;
+                } else {
+                    usingComputer[id] = false;
+                    rejected++;
+                }
+            } else {
+                // Departure
+                inside[id] = false;
+
+                if (usingComputer[id]) {
+                    available++;
+                    usingComputer[id] = false;
+                }
+            }
+        }
+
+        return rejected;
+    }
+};
