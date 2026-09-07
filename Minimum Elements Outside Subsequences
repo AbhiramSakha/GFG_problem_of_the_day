@@ -1,0 +1,62 @@
+class Solution {
+  public:
+    int minCount(vector<int>& arr) {
+        int n = arr.size();
+
+        // dp[i][j] = maximum number of elements that can be used
+        // when i is the last element of the increasing subsequence
+        // and j is the last element of the decreasing subsequence.
+        //
+        // We process elements from left to right. To avoid O(n^3),
+        // use DP based on the two possible subsequences.
+
+        vector<vector<int>> dp(n, vector<int>(n, -1));
+
+        // State: (last index of increasing, last index of decreasing)
+        // We use -1 as an empty subsequence, handled separately.
+        
+        int ans = 0;
+
+        // dp[i][j] represents states after processing up to max(i,j).
+        // Start by putting the first element in either subsequence.
+        vector<vector<int>> f(n + 1, vector<int>(n + 1, -1));
+
+        // 0 means no last element.
+        f[0][0] = 0;
+
+        for (int pos = 0; pos < n; pos++) {
+            vector<vector<int>> nf = f;
+
+            for (int inc = 0; inc <= n; inc++) {
+                for (int dec = 0; dec <= n; dec++) {
+                    if (f[inc][dec] == -1) continue;
+
+                    // Leave arr[pos] unused.
+                    nf[inc][dec] = max(nf[inc][dec], f[inc][dec]);
+
+                    // Put arr[pos] into increasing subsequence.
+                    if (inc == 0 || arr[pos] > arr[inc - 1]) {
+                        nf[pos + 1][dec] =
+                            max(nf[pos + 1][dec], f[inc][dec] + 1);
+                    }
+
+                    // Put arr[pos] into decreasing subsequence.
+                    if (dec == 0 || arr[pos] < arr[dec - 1]) {
+                        nf[inc][pos + 1] =
+                            max(nf[inc][pos + 1], f[inc][dec] + 1);
+                    }
+                }
+            }
+
+            f.swap(nf);
+        }
+
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= n; j++) {
+                ans = max(ans, f[i][j]);
+            }
+        }
+
+        return n - ans;
+    }
+};
