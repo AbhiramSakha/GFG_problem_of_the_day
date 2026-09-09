@@ -1,0 +1,51 @@
+
+class Solution {
+  public:
+    int findMax(int n) {
+        int ans = n;
+        int maxSum = 0;
+
+        while (n > 0) {
+            n /= 10;
+            maxSum = maxSum * 10 + 9;
+        }
+
+        int candidate = maxSum / 10;
+        int x = ans;
+        int place = 1;
+
+        while (x >= 10) {
+            x /= 10;
+            place *= 10;
+        }
+
+        int best = ans;
+
+        for (int p = place; p > 0; p /= 10) {
+            int prefix = ans / (p * 10);
+            int digit = (ans / p) % 10;
+
+            if (digit > 0) {
+                int cur = prefix * (p * 10) + (digit - 1) * p + (p - 1);
+
+                int sum = 0, temp = cur;
+                while (temp > 0) {
+                    sum += temp % 10;
+                    temp /= 10;
+                }
+
+                int bestSum = 0, temp2 = best;
+                while (temp2 > 0) {
+                    bestSum += temp2 % 10;
+                    temp2 /= 10;
+                }
+
+                if (sum > bestSum || (sum == bestSum && cur > best))
+                    best = cur;
+            }
+        }
+
+        return best;
+    }
+};
+
