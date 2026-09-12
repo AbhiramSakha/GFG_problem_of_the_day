@@ -1,0 +1,35 @@
+class Solution {
+  public:
+    int maxProduct(vector<int> &arr, int k) {
+        int n = arr.size();
+        const long long INF = (1LL << 62);
+
+        vector<vector<long long>> mx(k + 1, vector<long long>(n + 1, -INF));
+        vector<vector<long long>> mn(k + 1, vector<long long>(n + 1, INF));
+
+        mx[0][0] = mn[0][0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+            mx[0][i] = mn[0][i] = 1;
+
+            for (int j = 1; j <= min(i, k); j++) {
+                mx[j][i] = mx[j][i - 1];
+                mn[j][i] = mn[j][i - 1];
+
+                if (mx[j - 1][i - 1] != -INF) {
+                    long long p = mx[j - 1][i - 1] * arr[i - 1];
+                    mx[j][i] = max(mx[j][i], p);
+                    mn[j][i] = min(mn[j][i], p);
+                }
+
+                if (mn[j - 1][i - 1] != INF) {
+                    long long p = mn[j - 1][i - 1] * arr[i - 1];
+                    mx[j][i] = max(mx[j][i], p);
+                    mn[j][i] = min(mn[j][i], p);
+                }
+            }
+        }
+
+        return (int)mx[k][n];
+    }
+};
