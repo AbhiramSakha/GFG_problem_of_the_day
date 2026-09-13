@@ -1,0 +1,43 @@
+class Solution {
+  public:
+    pair<int, int> bfs(int start, vector<vector<int>> &adj) {
+        int n = adj.size();
+        vector<int> dist(n, -1);
+        queue<int> q;
+
+        dist[start] = 0;
+        q.push(start);
+
+        int farthest = start;
+
+        while (!q.empty()) {
+            int u = q.front();
+            q.pop();
+
+            if (dist[u] > dist[farthest])
+                farthest = u;
+
+            for (int v : adj[u]) {
+                v--;
+
+                if (dist[v] == -1) {
+                    dist[v] = dist[u] + 1;
+                    q.push(v);
+                }
+            }
+        }
+
+        return {farthest, dist[farthest]};
+    }
+
+    int partyHouse(vector<vector<int>> &adj) {
+        int n = adj.size();
+
+        auto first = bfs(0, adj);
+        auto second = bfs(first.first, adj);
+
+        int diameter = second.second;
+
+        return (diameter + 1) / 2;
+    }
+};
