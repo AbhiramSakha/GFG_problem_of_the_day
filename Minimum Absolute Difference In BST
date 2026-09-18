@@ -1,0 +1,27 @@
+class Solution {
+  public:
+    int absDiff(Node *root) {
+        int ans = INT_MAX;
+        Node* prev = nullptr;
+        stack<Node*> st;
+        Node* curr = root;
+
+        while (curr || !st.empty()) {
+            while (curr) {
+                st.push(curr);
+                curr = curr->left;
+            }
+
+            curr = st.top();
+            st.pop();
+
+            if (prev)
+                ans = min(ans, curr->data - prev->data);
+
+            prev = curr;
+            curr = curr->right;
+        }
+
+        return ans;
+    }
+};
