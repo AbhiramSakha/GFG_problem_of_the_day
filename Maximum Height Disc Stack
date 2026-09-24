@@ -1,0 +1,46 @@
+class Solution:
+    def maxStackHeight(self, r, h):
+        discs = sorted(zip(r, h))
+        
+        vals = sorted(set(h))
+        comp = {v: i + 1 for i, v in enumerate(vals)}
+        m = len(vals)
+        
+        bit = [0] * (m + 1)
+        
+        def query(x):
+            res = 0
+            while x > 0:
+                res = max(res, bit[x])
+                x -= x & -x
+            return res
+        
+        def update(x, value):
+            while x <= m:
+                bit[x] = max(bit[x], value)
+                x += x & -x
+        
+        ans = 0
+        i = 0
+        n = len(discs)
+        
+        while i < n:
+            j = i
+            while j < n and discs[j][0] == discs[i][0]:
+                j += 1
+            
+            pending = []
+            
+            for k in range(i, j):
+                radius, height = discs[k]
+                pos = comp[height]
+                best = query(pos - 1) + height
+                pending.append((pos, best))
+                ans = max(ans, best)
+            
+            for pos, best in pending:
+                update(pos, best)
+            
+            i = j
+        
+        return ans
