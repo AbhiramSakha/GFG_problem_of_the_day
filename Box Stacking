@@ -1,0 +1,28 @@
+class Solution:
+    def maxHeight(self, height: list[int], width: list[int], length: list[int]) -> int:
+        boxes = []
+
+        for h, w, l in zip(height, width, length):
+            boxes.append((h, max(w, l), min(w, l)))
+            boxes.append((w, max(h, l), min(h, l)))
+            boxes.append((l, max(h, w), min(h, w)))
+
+        boxes.sort(key=lambda x: x[1] * x[2], reverse=True)
+
+        n = len(boxes)
+        dp = [boxes[i][0] for i in range(n)]
+
+        ans = 0
+
+        for i in range(n):
+            h1, w1, l1 = boxes[i]
+
+            for j in range(i):
+                h2, w2, l2 = boxes[j]
+
+                if w1 < w2 and l1 < l2:
+                    dp[i] = max(dp[i], dp[j] + h1)
+
+            ans = max(ans, dp[i])
+
+        return ans
