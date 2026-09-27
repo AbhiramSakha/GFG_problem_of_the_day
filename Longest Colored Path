@@ -1,0 +1,127 @@
+class Solution:
+    def longestPath(self, s, edges):
+        n = len(s)
+
+        if n == 1:
+            return 1
+
+        graph = [[] for _ in range(n)]
+
+        for i, (u, v) in enumerate(edges):
+            u -= 1
+            v -= 1
+            graph[u].append((v, 2 * i))
+            graph[v].append((u, 2 * i + 1))
+
+        m = 2 * len(edges)
+
+        allR = [0] * m
+        allB = [0] * m
+        outMixed = [0] * m
+        inMixed = [0] * m
+
+        parent = [-1] * n
+        parent[0] = -2
+        order = [0]
+
+        for u in order:
+            for v, _ in graph[u]:
+                if parent[v] == -1:
+                    parent[v] = u
+                    order.append(v)
+
+        def calculate(u, v):
+            bestR = 0
+            bestB = 0
+            bestMixedR = 0
+            bestMixedB = 0
+
+            for w, edge_id in graph[v]:
+                if w == u:
+                    continue
+
+                r = allR[edge_id]
+                b = allB[edge_id]
+                mixed = outMixed[edge_id]
+
+                bestR = max(bestR, r)
+                bestB = max(bestB, b)
+
+                if s[v] == 'R':
+                    if s[w] == 'R':
+                        bestMixedR = max(bestMixedR, mixed)
+                    else:
+                        bestMixedB = max(bestMixedB, b)
+                else:
+                    if s[w] == 'B':
+                        bestMixedB = max(bestMixedB, b)
+
+            if s[u] == 'R':
+                r = 1 + bestR if s[v] == 'R' else 0
+                b = 0
+
+                if s[v] == 'R':
+                    mixed = 1 + bestMixedR
+                else:
+                    mixed = 1 + bestMixedB
+
+                incoming = 1 + bestR if s[v] == 'R' else 0
+
+            else:
+                r = 0
+                b = 1 + bestB if s[v] == 'B' else 0
+
+                mixed = 1 + bestMixedB if s[v] == 'B' else 0
+
+                if s[v] == 'R':
+                    incoming = 1 + bestMixedR
+                else:
+                    incoming = 1 + bestB
+
+            return r, b, mixed, incoming
+
+        for u in reversed(order):
+            for v, edge_id in graph[u]:
+                if parent[v] == u:
+                    allR[edge_id], allB[edge_id], outMixed[edge_id], inMixed[edge_id] = calculate(u, v)
+
+        for u in order:
+            for v, edge_id in graph[u]:
+                if parent[v] == u:
+                    reverse_id = edge_id ^ 1
+                    allR[reverse_id], allB[reverse_id], outMixed[reverse_id], inMixed[reverse_id] = calculate(v, u)
+
+        answer = 1
+
+        for u in range(n):
+            best_in = [(0, -1), (0, -1)]
+            best_out = [(0, -1), (0, -1)]
+
+            for v, edge_id in graph[u]:
+                incoming = inMixed[edge_id]
+                outgoing = outMixed[edge_id]
+
+                if incoming > best_in[0][0]:
+                    best_in[1] = best_in[0]
+                    best_in[0] = (incoming, edge_id)
+                elif incoming > best_in[1][0]:
+                    best_in[1] = (incoming, edge_id)
+
+                if outgoing > best_out[0][0]:
+                    best_out[1] = best_out[0]
+                    best_out[0] = (outgoing, edge_id)
+                elif outgoing > best_out[1][0]:
+                    best_out[1] = (outgoing, edge_id)
+
+            answer = max(
+                answer,
+                1 + best_in[0][0],
+                1 + best_out[0][0]
+            )
+
+            for in_len, in_edge in best_in:
+                for out_len, out_edge in best_out:
+                    if in_edge != -1 and out_edge != -1 and in_edge != out_edge:
+                        answer = max(answer, 1 + in_len + out_len)
+
+        return answer
