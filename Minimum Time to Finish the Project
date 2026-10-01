@@ -1,0 +1,39 @@
+
+from collections import deque
+
+class Solution:
+    def minTime(self, duration, dependencies):
+        n = len(duration)
+        graph = [[] for _ in range(n)]
+        indegree = [0] * n
+
+        for u, v in dependencies:
+            graph[u].append(v)
+            indegree[v] += 1
+
+        dp = duration[:]
+        q = deque()
+
+        for i in range(n):
+            if indegree[i] == 0:
+                q.append(i)
+
+        completed = 0
+        ans = 0
+
+        while q:
+            u = q.popleft()
+            completed += 1
+            ans = max(ans, dp[u])
+
+            for v in graph[u]:
+                dp[v] = max(dp[v], dp[u] + duration[v])
+                indegree[v] -= 1
+
+                if indegree[v] == 0:
+                    q.append(v)
+
+        if completed != n:
+            return -1
+
+        return ans
