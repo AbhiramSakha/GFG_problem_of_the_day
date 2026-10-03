@@ -1,0 +1,42 @@
+class Solution:
+    def formCoils(self, n: int) -> list[list[int]]:
+        m = 4 * n
+        coil1 = []
+
+        layer = 0
+
+        while layer < m:
+            top = layer
+            bottom = m - 1 - layer
+            left = layer
+            right = m - 2 - layer
+
+            if top > bottom or left > right:
+                break
+
+            for r in range(top, bottom + 1):
+                coil1.append(r * m + left + 1)
+
+            for c in range(left + 1, right + 1):
+                coil1.append(bottom * m + c + 1)
+
+            for r in range(bottom - 1, top, -1):
+                coil1.append(r * m + right + 1)
+
+            for c in range(right - 1, left + 1, -1):
+                coil1.append((top + 1) * m + c + 1)
+
+            layer += 2
+
+        coil2 = []
+
+        for x in coil1:
+            r = (x - 1) // m
+            c = (x - 1) % m
+
+            nr = m - 1 - r
+            nc = m - 1 - c
+
+            coil2.append(nr * m + nc + 1)
+
+        return [coil1, coil2]
