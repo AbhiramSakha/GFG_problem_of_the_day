@@ -1,0 +1,21 @@
+class Solution:
+    def socialNetwork(self, arr):
+        n = len(arr) + 1
+        ans = []
+
+        for i in range(2, n + 1):
+            current = i
+            distance = 0
+            reachable = []
+
+            while current != 1:
+                current = arr[current - 2]
+                distance += 1
+                reachable.append((current, distance))
+
+            reachable.sort()
+
+            for user, dist in reachable:
+                ans.append([i, user, dist])
+
+        return ans
