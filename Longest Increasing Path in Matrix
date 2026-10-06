@@ -1,0 +1,21 @@
+class Solution:
+    def longIncPath(self, matrix, n, m):
+        cells = [(matrix[i][j], i, j) for i in range(n) for j in range(m)]
+        cells.sort()
+
+        dp = [[1] * m for _ in range(n)]
+        ans = 1
+
+        for value, i, j in cells:
+            if i > 0 and matrix[i - 1][j] < value:
+                dp[i][j] = max(dp[i][j], dp[i - 1][j] + 1)
+            if i + 1 < n and matrix[i + 1][j] < value:
+                dp[i][j] = max(dp[i][j], dp[i + 1][j] + 1)
+            if j > 0 and matrix[i][j - 1] < value:
+                dp[i][j] = max(dp[i][j], dp[i][j - 1] + 1)
+            if j + 1 < m and matrix[i][j + 1] < value:
+                dp[i][j] = max(dp[i][j], dp[i][j + 1] + 1)
+
+            ans = max(ans, dp[i][j])
+
+        return ans
