@@ -1,0 +1,6 @@
+class Solution:
+    def maxValue(self, n: int) -> int:
+        while "111" in bin(n):
+            pos = bin(n).find("111")
+            n &= ~(1 << (len(bin(n)) - 3 - pos))
+        return n
