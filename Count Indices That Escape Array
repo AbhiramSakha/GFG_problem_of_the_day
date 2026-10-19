@@ -1,0 +1,29 @@
+
+class Solution:
+    def goodIndices(self, arr):
+        n = len(arr)
+        state = [0] * n
+        good = [False] * n
+
+        for i in range(n):
+            if state[i] != 0:
+                continue
+
+            path = []
+            pos = i
+
+            while 0 <= pos < n and state[pos] == 0:
+                state[pos] = 1
+                path.append(pos)
+                pos += arr[pos]
+
+            result = pos < 0 or pos >= n or (0 <= pos < n and state[pos] == 2 and good[pos])
+
+            if 0 <= pos < n and state[pos] == 1:
+                result = False
+
+            for j in reversed(path):
+                state[j] = 2
+                good[j] = result
+
+        return sum(good)
