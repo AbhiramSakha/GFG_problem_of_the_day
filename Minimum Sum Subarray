@@ -1,0 +1,7 @@
+class Solution:
+    def minSubarraySum(self, arr: list[int]) -> int:
+        curr = ans = arr[0]
+        for i in range(1, len(arr)):
+            curr = min(arr[i], curr + arr[i])
+            ans = min(ans, curr)
+        return ans
