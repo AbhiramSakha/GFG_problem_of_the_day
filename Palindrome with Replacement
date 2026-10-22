@@ -1,0 +1,45 @@
+class Solution:
+    def minimumSum(self, s: str) -> int:
+        n = len(s)
+        a = list(s)
+
+        for i in range(n // 2):
+            j = n - 1 - i
+
+            if a[i] != '?' and a[j] != '?' and a[i] != a[j]:
+                return -1
+
+            if a[i] == '?':
+                a[i] = a[j]
+            if a[j] == '?':
+                a[j] = a[i]
+
+        m = (n + 1) // 2
+        inf = 10**18
+        dp = [0] * 26
+
+        for i in range(m):
+            c = a[i]
+
+            if c != '?':
+                allowed = [ord(c) - ord('a')]
+            else:
+                allowed = range(26)
+
+            ndp = [inf] * 26
+
+            if i == 0:
+                for x in allowed:
+                    ndp[x] = 0
+            else:
+                for x in allowed:
+                    ndp[x] = min(dp[y] + abs(x - y) for y in range(26))
+
+            dp = ndp
+
+        ans = min(dp)
+
+        for i in range(m - 1):
+            pass
+
+        return ans * 2
