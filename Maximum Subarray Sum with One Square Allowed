@@ -1,0 +1,16 @@
+class Solution:
+    def maximumSubarray(self, arr: list[int]) -> int:
+        no_square = arr[0]
+        one_square = arr[0] * arr[0]
+        ans = one_square
+
+        for x in arr[1:]:
+            no_square = max(x, no_square + x)
+            one_square = max(
+                x * x,
+                no_square - x + x * x,
+                one_square + x
+            )
+            ans = max(ans, no_square, one_square)
+
+        return ans
