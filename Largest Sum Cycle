@@ -1,0 +1,25 @@
+class Solution:
+    def largestSumCycle(self, edge):
+        n = len(edge)
+        visited = [False] * n
+        ans = -1
+
+        for i in range(n):
+            if visited[i]:
+                continue
+
+            current = i
+            path = {}
+            total = 0
+
+            while current != -1 and not visited[current]:
+                visited[current] = True
+                path[current] = total
+                total += current
+                current = edge[current]
+
+            if current != -1 and current in path:
+                cycle_sum = total - path[current]
+                ans = max(ans, cycle_sum)
+
+        return ans
