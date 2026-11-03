@@ -1,0 +1,48 @@
+
+class Solution:
+    def maximumWeight(self, n, edges, queries):
+        parent = list(range(n + 1))
+        size = [1] * (n + 1)
+
+        def find(x):
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(a, b):
+            a = find(a)
+            b = find(b)
+
+            if a == b:
+                return 0
+
+            if size[a] < size[b]:
+                a, b = b, a
+
+            pairs = size[a] * size[b]
+
+            parent[b] = a
+            size[a] += size[b]
+
+            return pairs
+
+        edges.sort(key=lambda x: x[2])
+
+        sorted_queries = sorted(
+            enumerate(queries), key=lambda x: x[1]
+        )
+
+        ans = [0] * len(queries)
+        j = 0
+        total = 0
+
+        for idx, limit in sorted_queries:
+            while j < len(edges) and edges[j][2] <= limit:
+                u, v, w = edges[j]
+                total += union(u, v)
+                j += 1
+
+            ans[idx] = total
+
+        return ans
