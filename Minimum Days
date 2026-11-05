@@ -1,0 +1,33 @@
+class Solution:
+    def getMinimumDays(self, s: str, p: list[int]) -> int:
+        n = len(s)
+
+        def check(days):
+            removed = [False] * n
+
+            for i in range(days):
+                removed[p[i]] = True
+
+            for i in range(n - 1):
+                if not removed[i] and not removed[i + 1]:
+                    if s[i] == s[i + 1]:
+                        return False
+
+            return True
+
+        if check(0):
+            return 0
+
+        low, high = 1, n
+        ans = n
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            if check(mid):
+                ans = mid
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return ans
