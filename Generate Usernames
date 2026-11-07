@@ -1,0 +1,27 @@
+class Solution:
+    def generateUsernames(self, arr: list[str]) -> list[str]:
+        reserved = set(arr)
+        used = set()
+        next_suffix = {}
+        result = []
+
+        for name in arr:
+            if name not in used:
+                used.add(name)
+                result.append(name)
+            else:
+                if name not in next_suffix:
+                    next_suffix[name] = 1
+
+                num = next_suffix[name]
+
+                while name + str(num) in reserved or name + str(num) in used:
+                    num += 1
+
+                new_name = name + str(num)
+
+                used.add(new_name)
+                result.append(new_name)
+                next_suffix[name] = num + 1
+
+        return result
