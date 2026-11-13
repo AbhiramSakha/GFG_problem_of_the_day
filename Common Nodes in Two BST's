@@ -1,0 +1,38 @@
+
+class Solution:
+    def findCommon(self, r1: 'Node', r2: 'Node') -> list[int]:
+        s1 = []
+        s2 = []
+        ans = []
+
+        while True:
+            while r1:
+                s1.append(r1)
+                r1 = r1.left
+
+            while r2:
+                s2.append(r2)
+                r2 = r2.left
+
+            if not s1 or not s2:
+                break
+
+            node1 = s1[-1]
+            node2 = s2[-1]
+
+            if node1.data == node2.data:
+                ans.append(node1.data)
+                s1.pop()
+                s2.pop()
+                r1 = node1.right
+                r2 = node2.right
+
+            elif node1.data < node2.data:
+                s1.pop()
+                r1 = node1.right
+
+            else:
+                s2.pop()
+                r2 = node2.right
+
+        return ans
