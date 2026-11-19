@@ -1,12 +1,21 @@
 # 🚀 GeeksforGeeks | Problem of the Day
 
-\<p align="center">
-&#x20; \<img src="[https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00C9A7&center=true&vCenter=true&width=700&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&weight=600\&size=25\&pause=1000\&color=00C9A7\&center=true\&vCenter=true\&width=700\&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms)" alt="Typing SVG" />
-\</p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00C9A7&center=true&vCenter=true&width=700&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms" alt="Typing SVG" />
+</p>
 
-\<p align="center">   \<b>A journey of consistency, problem-solving, and continuous improvement.\</b> \</p>
+<p align="center">
+  <b>A journey of consistency, problem-solving, and continuous improvement.</b>
+</p>
 
-\<p align="center">   \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">     \<img src="[https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge\&logo=github)" />   \</a>   \<img src="[https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />   \<img src="[https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge](https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge)" />   \<img src="[https://img.shields.io/badge/Status-Active-success?style=for-the-badge](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)" /> \</p>
+<p align="center">
+  <a href="https://github.com/AbhiramSakha">
+    <img src="https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge&logo=github" alt="GitHub" />
+  </a>
+  <img src="https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="Platform" />
+  <img src="https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge" alt="Focus" />
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status" />
+</p>
 
 ---
 
@@ -31,12 +40,12 @@ Every problem is an opportunity to learn something new, strengthen fundamentals,
 
 ## 🛠️ Technologies & Languages
 
-\<p align="left">
-&#x20; \<img src="[https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)" />
-&#x20; \<img src="[https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white](https://img.shields.io/badge/C++-00599C?style=for-the-badge\&logo=cplusplus\&logoColor=white)" />
-&#x20; \<img src="[https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />
-&#x20; \<img src="[https://img.shields.io/badge/Git-](https://img.shields.io/badge/Git-) F05032?style=for-the-badge&logo=git&logoColor=white" />
-\</p>
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
+  <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+</p>
 
 ---
 
@@ -50,12 +59,12 @@ This repository focuses on important Data Structures and Algorithms concepts, in
 | 🔤 Strings             | Pattern Matching, Manipulation  |
 | 🔗 Linked Lists        | Reversal, Traversal             |
 | 🌳 Trees               | Binary Trees, BST               |
-| 🕸️ Graphs             | BFS, DFS, Shortest Paths        |
+| 🕸️ Graphs              | BFS, DFS, Shortest Paths        |
 | 📚 Stack & Queue       | Monotonic Stack, Priority Queue |
 | 🔍 Searching           | Binary Search, Linear Search    |
 | 🔢 Mathematics         | Number Theory, Bit Manipulation |
 | 🧠 Dynamic Programming | Memoization, Tabulation         |
-| ⚡ Greedy Algorithms    | Optimization Problems           |
+| ⚡ Greedy Algorithms   | Optimization Problems           |
 | 🧩 Hashing             | Maps, Sets, Frequency Counting  |
 | 🔄 Recursion           | Backtracking, Subproblems       |
 
@@ -112,23 +121,23 @@ I believe that **small improvements every day lead to remarkable results over ti
 
 ## 🤝 Connect With Me
 
-\<p align="center">
-&#x20; \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">
-&#x20;   \<img src="[https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge\&logo=github)" />
-&#x20; \</a>
-&#x20; \<a href="[https://www.geeksforgeeks.org/](https://www.geeksforgeeks.org/)">
-&#x20;   \<img src="[https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />
-&#x20; \</a>
-\</p>
+<p align="center">
+  <a href="https://github.com/AbhiramSakha">
+    <img src="https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge&logo=github" alt="Follow on GitHub" />
+  </a>
+  <a href="https://www.geeksforgeeks.org/">
+    <img src="https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks" />
+  </a>
+</p>
 
-\<p align="center">
-&#x20; \<b>⭐ If you find this repository helpful, consider giving it a star!\</b>
-\</p>
+<p align="center">
+  <b>⭐ If you find this repository helpful, consider giving it a star!</b>
+</p>
 
 ---
 
-\<p align="center">
-&#x20; \<b>💻 Code. Learn. Practice. Repeat. 🚀\</b>
-&#x20; \<br/>
-&#x20; Made with ❤️ by \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">Abhiram Sakha\</a>
-\</p>
+<p align="center">
+  <b>💻 Code. Learn. Practice. Repeat. 🚀</b>
+  <br/>
+  Made with ❤️ by <a href="https://github.com/AbhiramSakha">Abhiram Sakha</a>
+</p>
