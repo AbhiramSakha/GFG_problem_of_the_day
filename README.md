@@ -1,134 +1,151 @@
-# 🚀 GeeksforGeeks | Problem of the Day
+# 🚀 GFG Problem of the Day
 
-\<p align="center">
-&#x20; \<img src="[https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00C9A7&center=true&vCenter=true&width=700&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&weight=600\&size=25\&pause=1000\&color=00C9A7\&center=true\&vCenter=true\&width=700\&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms)" alt="Typing SVG" />
-\</p>
+> Daily DSA solutions with clean code and clear explanations. One problem a day, every day.
 
-\<p align="center">   \<b>A journey of consistency, problem-solving, and continuous improvement.\</b> \</p>
-
-\<p align="center">   \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">     \<img src="[https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge\&logo=github)" />   \</a>   \<img src="[https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />   \<img src="[https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge](https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge)" />   \<img src="[https://img.shields.io/badge/Status-Active-success?style=for-the-badge](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)" /> \</p>
-
----
-
-## 👨‍💻 About This Repository
-
-Welcome to my **GeeksforGeeks Problem of the Day (POTD)** repository!
-
-This repository is a collection of my coding solutions to GeeksforGeeks daily programming challenges. It represents my continuous journey toward mastering Data Structures and Algorithms, improving logical thinking, and developing efficient problem-solving skills.
-
-Every problem is an opportunity to learn something new, strengthen fundamentals, and become a better developer.
-
-### 🎯 My Objectives
-
-- Solve GeeksforGeeks coding challenges consistently.
-- Strengthen Data Structures and Algorithms concepts.
-- Develop optimized and efficient solutions.
-- Improve coding skills and logical thinking.
-- Prepare for technical interviews and coding assessments.
-- Maintain a structured collection of solved problems.
+![Stars](https://img.shields.io/github/stars/AbhiramSakha/GFG_problem_of_the_day?style=flat-square&color=yellow)
+![Forks](https://img.shields.io/github/forks/AbhiramSakha/GFG_problem_of_the_day?style=flat-square&color=orange)
+![Last Commit](https://img.shields.io/github/last-commit/AbhiramSakha/GFG_problem_of_the_day?style=flat-square&color=blue)
+![Repo Size](https://img.shields.io/github/repo-size/AbhiramSakha/GFG_problem_of_the_day?style=flat-square&color=green)
+![Top Language](https://img.shields.io/github/languages/top/AbhiramSakha/GFG_problem_of_the_day?style=flat-square&color=purple)
 
 ---
 
-## 🛠️ Technologies & Languages
+## 📑 Table of Contents
 
-\<p align="left">
-&#x20; \<img src="[https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)" />
-&#x20; \<img src="[https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white](https://img.shields.io/badge/C++-00599C?style=for-the-badge\&logo=cplusplus\&logoColor=white)" />
-&#x20; \<img src="[https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />
-&#x20; \<img src="[https://img.shields.io/badge/Git-](https://img.shields.io/badge/Git-) F05032?style=for-the-badge&logo=git&logoColor=white" />
-\</p>
-
----
-
-## 📚 Topics Covered
-
-This repository focuses on important Data Structures and Algorithms concepts, including:
-
-| Category               | Topics                          |
-| ---------------------- | ------------------------------- |
-| 📦 Arrays              | Sorting, Searching, Prefix Sum  |
-| 🔤 Strings             | Pattern Matching, Manipulation  |
-| 🔗 Linked Lists        | Reversal, Traversal             |
-| 🌳 Trees               | Binary Trees, BST               |
-| 🕸️ Graphs             | BFS, DFS, Shortest Paths        |
-| 📚 Stack & Queue       | Monotonic Stack, Priority Queue |
-| 🔍 Searching           | Binary Search, Linear Search    |
-| 🔢 Mathematics         | Number Theory, Bit Manipulation |
-| 🧠 Dynamic Programming | Memoization, Tabulation         |
-| ⚡ Greedy Algorithms    | Optimization Problems           |
-| 🧩 Hashing             | Maps, Sets, Frequency Counting  |
-| 🔄 Recursion           | Backtracking, Subproblems       |
+- [About](#-about)
+- [Progress](#-progress)
+- [Problem Index](#-problem-index)
+- [Topics Covered](#-topics-covered)
+- [Repository Structure](#-repository-structure)
+- [Solution Format](#-solution-format)
+- [Getting Started](#-getting-started)
+- [Contributing](#-contributing)
+- [Connect With Me](#-connect-with-me)
 
 ---
 
-## 📂 Repository Overview
+## 📖 About
 
-**Repository:** `GFG_problem_of_the_day`
+This repository contains my solutions to the **GeeksforGeeks Problem of the Day (POTD)**.
 
-Explore the repository to find individual problem solutions and their corresponding source code.
+Each solution aims to be:
 
-Each solution is maintained as part of my coding practice and learning journey.
-
----
-
-## 💡 My Problem-Solving Approach
-
-For every coding challenge, I focus on:
-
-1. **Understand** – Analyze the problem statement and constraints.
-2. **Plan** – Identify the appropriate algorithm and data structure.
-3. **Implement** – Write clean and readable code.
-4. **Optimize** – Improve time and space complexity.
-5. **Validate** – Test sample cases and edge cases.
-6. **Learn** – Understand the concepts and improve for future challenges.
+- ✅ **Correct**: accepted on GFG with all test cases passing
+- ⚡ **Efficient**: optimized time and space complexity
+- 🧹 **Readable**: clean code with helpful comments
+- 🧠 **Explained**: includes the idea behind the approach
 
 ---
 
-## 📈 Learning Goals
+## 📊 Progress
 
-- [x] Start solving GeeksforGeeks POTD challenges.
-- [x] Build a dedicated GitHub repository.
-- [x] Practice Data Structures and Algorithms.
-- [ ] Improve optimization and problem-solving techniques.
-- [ ] Strengthen advanced DSA concepts.
-- [ ] Maintain consistency in daily coding practice.
-- [ ] Build strong technical interview preparation skills.
+| Solved | Current Streak | Easy | Medium | Hard |
+|:------:|:--------------:|:----:|:------:|:----:|
+| XX | XX days | XX | XX | XX |
 
 ---
 
-## 🌟 Why This Repository?
+## 🗂️ Problem Index
 
-This repository reflects my commitment to:
-
-- Consistency in coding.
-- Continuous learning.
-- Writing efficient solutions.
-- Strengthening programming fundamentals.
-- Growing as a software developer.
-
-I believe that **small improvements every day lead to remarkable results over time.**
+| # | Date | Problem | Difficulty | Topic | Solution |
+|:-:|:----:|---------|:----------:|:-----:|:--------:|
+| 1 | DD-MM-YYYY | Problem Name | 🟢 Easy | Arrays | [Code](./path/to/file) |
+| 2 | DD-MM-YYYY | Problem Name | 🟡 Medium | Strings | [Code](./path/to/file) |
+| 3 | DD-MM-YYYY | Problem Name | 🔴 Hard | DP | [Code](./path/to/file) |
 
 ---
 
-## 🤝 Connect With Me
+## 🧠 Topics Covered
 
-\<p align="center">
-&#x20; \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">
-&#x20;   \<img src="[https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge\&logo=github)" />
-&#x20; \</a>
-&#x20; \<a href="[https://www.geeksforgeeks.org/](https://www.geeksforgeeks.org/)">
-&#x20;   \<img src="[https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />
-&#x20; \</a>
-\</p>
-
-\<p align="center">
-&#x20; \<b>⭐ If you find this repository helpful, consider giving it a star!\</b>
-\</p>
+| Category | Topics |
+|----------|--------|
+| **Basics** | Arrays, Strings, Hashing, Sorting |
+| **Linear Structures** | Linked List, Stack, Queue |
+| **Algorithms** | Recursion, Backtracking, Greedy, Binary Search |
+| **Advanced** | Trees, Graphs, Dynamic Programming, Heaps, Bit Manipulation |
 
 ---
 
-\<p align="center">
-&#x20; \<b>💻 Code. Learn. Practice. Repeat. 🚀\</b>
-&#x20; \<br/>
-&#x20; Made with ❤️ by \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">Abhiram Sakha\</a>
-\</p>
+## 📁 Repository Structure
+
+```text
+GFG_problem_of_the_day/
+├── Easy/
+│   └── Problem_Name.java
+├── Medium/
+│   └── Problem_Name.java
+├── Hard/
+│   └── Problem_Name.java
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🧩 Solution Format
+
+Every solution starts with this header:
+
+```java
+/*
+ * Problem    : <Problem Name>
+ * Platform   : GeeksforGeeks
+ * Date       : DD-MM-YYYY
+ * Difficulty : Easy | Medium | Hard
+ * Link       : <problem URL>
+ *
+ * Approach   : <short explanation of the idea>
+ * Time       : O(n)
+ * Space      : O(1)
+ */
+```
+
+---
+
+## ⚙️ Getting Started
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/AbhiramSakha/GFG_problem_of_the_day.git
+cd GFG_problem_of_the_day
+```
+
+**2. Run a solution**
+
+```bash
+# Java
+javac Problem_Name.java
+java Problem_Name
+
+# C++
+g++ problem_name.cpp -o out
+./out
+
+# Python
+python problem_name.py
+```
+
+---
+
+## 🤝 Contributing
+
+Found a better or faster approach? Contributions are welcome.
+
+1. Fork the repository
+2. Create a branch: `git checkout -b improve/problem-name`
+3. Commit your changes: `git commit -m "Optimize problem-name"`
+4. Push the branch: `git push origin improve/problem-name`
+5. Open a Pull Request
+
+---
+
+## 📬 Connect With Me
+
+- GitHub: [AbhiramSakha](https://github.com/AbhiramSakha)
+- LinkedIn: [your-profile](https://linkedin.com/in/your-profile)
+- GeeksforGeeks: [your-username](https://auth.geeksforgeeks.org/user/your-username)
+
+---
+
+⭐ If you found this repo useful, please give it a star!
