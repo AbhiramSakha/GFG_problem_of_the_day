@@ -1,153 +1,134 @@
-# 🚀 GFG Problem Of The Day Solutions
+# 🚀 GeeksforGeeks | Problem of the Day
 
-<div align="center">
+\<p align="center">
+&#x20; \<img src="[https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00C9A7&center=true&vCenter=true&width=700&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&weight=600\&size=25\&pause=1000\&color=00C9A7\&center=true\&vCenter=true\&width=700\&lines=Welcome+to+my+GFG+POTD+Repository!;Solving+Problems+%7C+Building+Logic;Learning+Data+Structures+%26+Algorithms)" alt="Typing SVG" />
+\</p>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=28&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=GeeksforGeeks+POTD+Solutions;Daily+DSA+Problem+Solving;Consistency+%2B+Coding+%2B+Growth;Java+%7C+C%2B%2B+%7C+Python" />
+\<p align="center">   \<b>A journey of consistency, problem-solving, and continuous improvement.\</b> \</p>
 
-<br/>
-
-<img src="https://img.shields.io/github/stars/AbhiramSakha/GFG_problem_of_the_day?style=for-the-badge&logo=github&color=yellow" />
-<img src="https://img.shields.io/github/forks/AbhiramSakha/GFG_problem_of_the_day?style=for-the-badge&logo=github&color=blue" />
-<img src="https://img.shields.io/github/repo-size/AbhiramSakha/GFG_problem_of_the_day?style=for-the-badge&logo=github&color=orange" />
-<img src="https://img.shields.io/github/last-commit/AbhiramSakha/GFG_problem_of_the_day?style=for-the-badge&logo=git&color=brightgreen" />
-
-</div>
+\<p align="center">   \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">     \<img src="[https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-AbhiramSakha-181717?style=for-the-badge\&logo=github)" />   \</a>   \<img src="[https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/Platform-GeeksforGeeks-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />   \<img src="[https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge](https://img.shields.io/badge/Focus-DSA-blue?style=for-the-badge)" />   \<img src="[https://img.shields.io/badge/Status-Active-success?style=for-the-badge](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)" /> \</p>
 
 ---
 
-# 📚 About This Repository
+## 👨‍💻 About This Repository
 
-Welcome to my **GeeksforGeeks Problem Of The Day** repository 🎯
+Welcome to my **GeeksforGeeks Problem of the Day (POTD)** repository!
 
-This repository contains solutions to daily POTD problems from GeeksforGeeks using efficient approaches and clean code structure.
+This repository is a collection of my coding solutions to GeeksforGeeks daily programming challenges. It represents my continuous journey toward mastering Data Structures and Algorithms, improving logical thinking, and developing efficient problem-solving skills.
 
-✨ The main goal of this repository is to:
+Every problem is an opportunity to learn something new, strengthen fundamentals, and become a better developer.
 
-- Improve problem-solving skills
-- Maintain coding consistency
-- Practice DSA daily
-- Prepare for coding interviews
-- Track daily progress publicly
+### 🎯 My Objectives
 
----
-
-# ⚡ Languages Used
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=cpp,java,python" />
-
-</div>
+- Solve GeeksforGeeks coding challenges consistently.
+- Strengthen Data Structures and Algorithms concepts.
+- Develop optimized and efficient solutions.
+- Improve coding skills and logical thinking.
+- Prepare for technical interviews and coding assessments.
+- Maintain a structured collection of solved problems.
 
 ---
 
-# 🧠 What You'll Find Here
+## 🛠️ Technologies & Languages
 
-✅ Daily GFG POTD Solutions  
-✅ Optimized & Clean Code  
-✅ Multiple Language Support  
-✅ Consistent Repository Updates  
-✅ Interview Preparation Problems  
-✅ DSA Concepts & Logic Building  
-
----
-
-# 📂 Repository Structure
-
-```bash
-📦 GFG_problem_of_the_day
- ┣ 📂 January
- ┃ ┣ 📜 problem1.cpp
- ┃ ┣ 📜 problem2.java
- ┃ ┗ 📜 problem3.py
- ┣ 📂 February
- ┣ 📂 March
- ┣ 📂 April
- ┗ 📜 README.md
-```
+\<p align="left">
+&#x20; \<img src="[https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)" />
+&#x20; \<img src="[https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white](https://img.shields.io/badge/C++-00599C?style=for-the-badge\&logo=cplusplus\&logoColor=white)" />
+&#x20; \<img src="[https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />
+&#x20; \<img src="[https://img.shields.io/badge/Git-](https://img.shields.io/badge/Git-) F05032?style=for-the-badge&logo=git&logoColor=white" />
+\</p>
 
 ---
 
-# 🌟 Why This Repository?
+## 📚 Topics Covered
 
-💡 Daily coding improves logical thinking and problem-solving speed.
+This repository focuses on important Data Structures and Algorithms concepts, including:
 
-By solving one problem every day:
-- You build consistency
-- You strengthen DSA concepts
-- You become interview-ready
-- You improve coding confidence
-
----
-
-# 📈 Daily Coding Journey
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=AbhiramSakha&theme=react-dark&hide_border=true" width="95%"/>
-
-</div>
-
----
-
-# 🔥 Repository Highlights
-
-<table align="center">
-<tr>
-<td align="center">📌 Daily Updates</td>
-<td align="center">🧠 DSA Practice</td>
-<td align="center">🚀 Interview Prep</td>
-</tr>
-
-<tr>
-<td align="center">💻 Clean Code</td>
-<td align="center">📚 Learning Journey</td>
-<td align="center">⭐ Consistency</td>
-</tr>
-</table>
+| Category               | Topics                          |
+| ---------------------- | ------------------------------- |
+| 📦 Arrays              | Sorting, Searching, Prefix Sum  |
+| 🔤 Strings             | Pattern Matching, Manipulation  |
+| 🔗 Linked Lists        | Reversal, Traversal             |
+| 🌳 Trees               | Binary Trees, BST               |
+| 🕸️ Graphs             | BFS, DFS, Shortest Paths        |
+| 📚 Stack & Queue       | Monotonic Stack, Priority Queue |
+| 🔍 Searching           | Binary Search, Linear Search    |
+| 🔢 Mathematics         | Number Theory, Bit Manipulation |
+| 🧠 Dynamic Programming | Memoization, Tabulation         |
+| ⚡ Greedy Algorithms    | Optimization Problems           |
+| 🧩 Hashing             | Maps, Sets, Frequency Counting  |
+| 🔄 Recursion           | Backtracking, Subproblems       |
 
 ---
 
-# 🤝 Contribution
+## 📂 Repository Overview
 
-Contributions are always welcome!
+**Repository:** `GFG_problem_of_the_day`
 
-If you'd like to:
-- Improve solutions
-- Add optimized approaches
-- Fix issues
-- Enhance documentation
+Explore the repository to find individual problem solutions and their corresponding source code.
 
-Feel free to fork this repository and create a pull request 🚀
+Each solution is maintained as part of my coding practice and learning journey.
 
 ---
 
-# 🌐 Connect With Me
+## 💡 My Problem-Solving Approach
 
-<div align="center">
+For every coding challenge, I focus on:
 
-<a href="https://github.com/AbhiramSakha">
-<img src="https://skillicons.dev/icons?i=github" width="55"/>
-</a>
-
-<a href="https://www.linkedin.com">
-<img src="https://skillicons.dev/icons?i=linkedin" width="55"/>
-</a>
-
-</div>
+1. **Understand** – Analyze the problem statement and constraints.
+2. **Plan** – Identify the appropriate algorithm and data structure.
+3. **Implement** – Write clean and readable code.
+4. **Optimize** – Improve time and space complexity.
+5. **Validate** – Test sample cases and edge cases.
+6. **Learn** – Understand the concepts and improve for future challenges.
 
 ---
 
-<div align="center">
+## 📈 Learning Goals
 
-## ⭐ If you like this repository, don't forget to star it!
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=2500&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Keep+Coding+%F0%9F%9A%80;Keep+Learning+%F0%9F%93%9A;Keep+Growing+%F0%9F%94%A5" />
-
-</div>
+- [x] Start solving GeeksforGeeks POTD challenges.
+- [x] Build a dedicated GitHub repository.
+- [x] Practice Data Structures and Algorithms.
+- [ ] Improve optimization and problem-solving techniques.
+- [ ] Strengthen advanced DSA concepts.
+- [ ] Maintain consistency in daily coding practice.
+- [ ] Build strong technical interview preparation skills.
 
 ---
 
-## 🔗 Repository Link
+## 🌟 Why This Repository?
 
-https://github.com/AbhiramSakha/GFG_problem_of_the_day
+This repository reflects my commitment to:
+
+- Consistency in coding.
+- Continuous learning.
+- Writing efficient solutions.
+- Strengthening programming fundamentals.
+- Growing as a software developer.
+
+I believe that **small improvements every day lead to remarkable results over time.**
+
+---
+
+## 🤝 Connect With Me
+
+\<p align="center">
+&#x20; \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">
+&#x20;   \<img src="[https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-Follow%20Me-181717?style=for-the-badge\&logo=github)" />
+&#x20; \</a>
+&#x20; \<a href="[https://www.geeksforgeeks.org/](https://www.geeksforgeeks.org/)">
+&#x20;   \<img src="[https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white](https://img.shields.io/badge/GeeksforGeeks-Practice-2F8D46?style=for-the-badge\&logo=geeksforgeeks\&logoColor=white)" />
+&#x20; \</a>
+\</p>
+
+\<p align="center">
+&#x20; \<b>⭐ If you find this repository helpful, consider giving it a star!\</b>
+\</p>
+
+---
+
+\<p align="center">
+&#x20; \<b>💻 Code. Learn. Practice. Repeat. 🚀\</b>
+&#x20; \<br/>
+&#x20; Made with ❤️ by \<a href="[https://github.com/AbhiramSakha](https://github.com/AbhiramSakha)">Abhiram Sakha\</a>
+\</p>
