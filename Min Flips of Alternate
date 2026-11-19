@@ -1,0 +1,13 @@
+class Solution:
+    def minFlips(self, s):
+        n = len(s)
+        flips1 = 0
+        flips2 = 0
+
+        for i in range(n):
+            if s[i] != str(i % 2):
+                flips1 += 1
+            else:
+                flips2 += 1
+
+        return min(flips1, flips2)
