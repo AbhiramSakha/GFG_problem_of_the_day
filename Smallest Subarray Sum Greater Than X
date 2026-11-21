@@ -1,0 +1,17 @@
+
+class Solution:
+    def smallestSubWithSum(self, arr, x):
+        n = len(arr)
+        left = 0
+        curr_sum = 0
+        ans = n + 1
+
+        for right in range(n):
+            curr_sum += arr[right]
+
+            while curr_sum > x:
+                ans = min(ans, right - left + 1)
+                curr_sum -= arr[left]
+                left += 1
+
+        return ans if ans <= n else 0
