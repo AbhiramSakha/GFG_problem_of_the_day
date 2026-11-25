@@ -1,0 +1,80 @@
+
+class Solution:
+    def minTime(self, a: int, b: int, d: int, l: int, r: int) -> int:
+        MOD = 10**9 + 7
+        net = a - b
+
+        def normal_time(x):
+            if x <= a:
+                return x
+            k = (x - a + net - 1) // net
+            return x + 2 * b * k
+
+        def floor_sum(n, m, aa, bb):
+            ans = 0
+            while True:
+                if aa >= m:
+                    ans += (n - 1) * n * (aa // m) // 2
+                    aa %= m
+                if bb >= m:
+                    ans += n * (bb // m)
+                    bb %= m
+
+                y = aa * n + bb
+                if y < m:
+                    break
+
+                n = y // m
+                bb = y % m
+                m, aa = aa, m
+
+            return ans
+
+        def sum_normal(L, H):
+            if L > H:
+                return 0
+
+            ans = 0
+
+            if L <= a:
+                end = min(H, a)
+                ans += (L + end) * (end - L + 1) // 2
+                L = end + 1
+
+            if L <= H:
+                n = H - L + 1
+                sum_y = (L + H) * n // 2
+
+                sum_k = floor_sum(
+                    n, net, 1, L - a + net - 1
+                )
+
+                ans += sum_y + 2 * b * sum_k
+
+            return ans
+
+        base = normal_time(d)
+
+        low, high = l, r + 1
+
+        while low < high:
+            mid = (low + high) // 2
+
+            if 1 + normal_time(d - mid) < base:
+                high = mid
+            else:
+                low = mid + 1
+
+        start = low
+
+        ans = (base * (start - l)) % MOD
+
+        if start <= r:
+            L = d - r
+            H = d - start
+
+            jump_sum = (r - start + 1) + sum_normal(L, H)
+
+            ans = (ans + jump_sum) % MOD
+
+        return ans
