@@ -1,0 +1,17 @@
+
+class Solution:
+    def countVowels(self, s: str, queries: list[list[int]]) -> list[int]:
+        n = len(s)
+        prefix = [0] * (n + 1)
+
+        vowels = "aeiou"
+
+        for i in range(n):
+            prefix[i + 1] = prefix[i] + (1 if s[i] in vowels else 0)
+
+        ans = []
+
+        for l, r in queries:
+            ans.append(prefix[r + 1] - prefix[l])
+
+        return ans
