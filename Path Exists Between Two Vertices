@@ -1,0 +1,21 @@
+
+from collections import deque
+
+class Solution:
+    def checkPath(self, adj: list[list[int]], u: int, v: int) -> bool:
+        visited = [False] * len(adj)
+        q = deque([u])
+        visited[u] = True
+
+        while q:
+            node = q.popleft()
+
+            if node == v:
+                return True
+
+            for nei in adj[node]:
+                if not visited[nei]:
+                    visited[nei] = True
+                    q.append(nei)
+
+        return False
